@@ -16,6 +16,21 @@
 
 //CODE HERE
 
+
+class Character {
+  constructor (name, type){
+    this.name = name
+    this.type = type
+  }
+}
+// const myCharacter = new Character('Luigi', 'robot')
+
+// Character.prototype.getInfo = function(){
+//   return 'This is a ${this.type} character named ${this.name}.'
+// }
+  
+
+
 //////////////////PROBLEM 2////////////////////
 
 /*
@@ -34,12 +49,47 @@
 
 //CODE HERE
 
+class NPC extends Character {
+  constructor(location, phrase){
+    super();
+      this.location = location
+      this.phrase = phrase
+    
+  }
+};
+
+
+
 /*
     Create an NPC named Ralph who is a human located in Niceland. His phrase should be `I'm gonna wreck it!`. 
     Store your new NPC in a variable called 'ralph'.
 */
 
 //CODE HERE
+
+function Person(name, type, location, phrase){
+  this.name = name;
+  this.type = type;
+  this.location = location;
+  this.phrase = phrase;
+}
+
+// const Ralph = new Person('Ralph' 'human', 'Niceland', "I'm gonna wreck it!")
+
+
+// const Ralph = new NPC(name, type, location, phrase){
+//   constructor() {
+//     super();
+//       this.name = name
+//       this.type = type
+//       this.location = location
+//       this.phrase = phrase.this.phrase = "I'm gonna wreck it!"
+
+//   }
+    
+// }
+
+
 
 /*
     Next you're going to create three variables to store information about Ralph.
@@ -49,6 +99,18 @@
 */
 
 //CODE HERE
+// const ralphsInfo(){
+//   getInfo. 
+// }
+
+// const ralphsDialogue () {
+
+// }
+
+// const ralphsLocation () {
+
+// }
+
 
 //////////////////PROBLEM 3////////////////////
 
@@ -74,6 +136,13 @@
 */
 
 //CODE HERE
+  class Player extends Character {
+    constructor(){
+      super();
+  }
+}
+
+
 
 /*
     Next, we'll create two Players.
@@ -84,6 +153,16 @@
 */
 
 //CODE HERE
+// let aang = Aang 
+//   constructor(name, type, healthLevel, attackLevel){
+//     this.name = name
+//     this.type = type;
+//     this.healthLevel = healthLevel;
+//     this.attackLevel = attackLevel;
+//   }
+
+
+
 
 /*
     Let's see how a fight between these two would go. 
@@ -93,6 +172,8 @@
 */
 
 //CODE HERE
+// const battle = Ozai
+
 
 //////////////////PROBLEM 4////////////////////
 
@@ -111,7 +192,12 @@
 */
 
 //CODE HERE
+class Hero extends Player {
+  super() {
 
+  }
+
+}
 /*
   Create a hero named 'Fire Spitter' whose type is 'dragon'. 
   Fire Spitter's healthLevel and attackLevels should both be 5000. 
@@ -122,3 +208,4 @@
 */
 
 //CODE HERE
+// const fireSpitter = 
