@@ -62,7 +62,7 @@ function lightSwitch(){
   //Invoke kitchenSwitch.
 
   //CODE HERE
-  // return kitchenSwitch();
+  // kitchenSwitch();
   
   //Create a variable called bathroomSwitch whose value is the invocation of lightSwitch. 
 
@@ -75,7 +75,7 @@ function lightSwitch(){
   //Invoke bathroomSwitch twice.
   
   //CODE HERE
-
+  // return bathroomSwitch;
   
   
   ////////////PROBLEM 3////////////
