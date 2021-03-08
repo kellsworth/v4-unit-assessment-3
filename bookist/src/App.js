@@ -3,6 +3,7 @@ import './App.css';
 import BookList from './Components/BookList';
 import Header from './Components/Header';
 import Shelf from './Components/Shelf';
+import data from './data.js';
 
 
 function App() {
