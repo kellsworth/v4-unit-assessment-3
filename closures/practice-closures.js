@@ -13,13 +13,17 @@
 function myFunc() {
   const myStr = 'super secret string';
 
+  function getSecretString() {
+    return myStr;
+  };
+  return getSecretString();
 };
 
 
 //Now create a variable called secretString. Its value should be the invocation of myFunc.
 
 //CODE HERE
-const secretString = new myFunc();
+const secretString = myFunc();
 
 
 ////////////PROBLEM 2////////////
@@ -39,7 +43,9 @@ function lightSwitch() {
   let isTheLightOn = false;
 
   function flipTheSwitch() {
-    if (isTheLightOn == true) {
+    isTheLightOn = !isTheLightOn
+
+    if (isTheLightOn === true) {
       return 'The light is on'
     } else {
       return 'The light is off'
@@ -52,7 +58,7 @@ function lightSwitch() {
 //Create a variable called kitchenSwitch whose value is the invocation of lightSwitch.
 
 //CODE HERE
-// const kitchenSwitch = function ()
+const kitchenSwitch = lightSwitch();
 
 //Invoke kitchenSwitch.
 
@@ -62,16 +68,13 @@ kitchenSwitch();
 //Create a variable called bathroomSwitch whose value is the invocation of lightSwitch. 
 
 //CODE HERE
-let bathroomSwitch = function (lightSwitch) {
-  return lightSwitch;
-
-}
+let bathroomSwitch = lightSwitch();
 
 //Invoke bathroomSwitch twice.
 
 //CODE HERE
-// return bathroomSwitch;
-
+bathroomSwitch();
+bathroomSwitch();
 
 ////////////PROBLEM 3////////////
 
@@ -86,14 +89,25 @@ let bathroomSwitch = function (lightSwitch) {
 
 //CODE HERE
 function plantTracker() {
-  this.plant = plant;
-  this.height = height;
+  const plant = 'fern';
+  const height = 12;
 
-  // readInfo(){
-  //   return 'This is a ${this.plant} plant that is ${this.height} inches tall.',
-  // }
+  return {
+    readInfo: function () {
+      return `This is a ${plant} plant that is ${height} inches tall.`
+    },
 
-  // function waterPlant
+    waterPlant: function () {
+      height = height + 1
+      return height
+    },
+
+    prunePlant: function () {
+      height = height - 1
+      return height
+    },
+  }
+
 }
 
 ////////////PROBLEM 4////////////
@@ -124,9 +138,6 @@ function plantTracker() {
 */
 
 //CODE HERE
-// let shoes = function (inventory) {
-//   return inventory;
-// }
 
 /*
   Add an item to your shoes array using the addToProducts function

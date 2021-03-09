@@ -16,7 +16,6 @@
 
 //CODE HERE
 
-
 class Character {
   constructor(name, type) {
     this.name = name;
