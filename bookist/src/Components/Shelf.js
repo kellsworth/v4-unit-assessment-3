@@ -1,8 +1,20 @@
 import React from "react";
 
-const Shelf = () => {
+const Shelf = (props) => {
+  const { shelf, clearShelfFn } = props;
+
+  const mappedTitles = shelf.map((title, index) => {
+    return (
+      <h4 key={index}>{title}</h4>
+    )
+  })
+
   return (
-    <section>Shelf</section>
+    <section>
+      <button onClick={() => clearShelfFn()}>Clear Shelf</button>
+      {mappedTitles}
+
+    </section>
   )
 }
 

@@ -1,31 +1,51 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
 import BookList from './Components/BookList';
 import Header from './Components/Header';
 import Shelf from './Components/Shelf';
 import data from './data.js';
+import SearchBar from './Components/SearchBar.js';
 
 
-function App() {
-  return (
-    <div className="App">
-      <Header />
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>
-        Edit <code>src/App.js</code> and save to reload.
-        </p>
-      <a
-        className="App-link"
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Learn React
-        </a>
-      <BookList />
-      <Shelf />
-    </div>
-  );
+
+class App extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      books: data,
+      shelf: [],
+    }
+  }
+
+  addToShelf = (bookTitle) => {
+    this.setState({ ...this.state, shelf: [...this.state.shelf, bookTitle] })
+
+  }
+
+  clearShelf = () => {
+    this.setState({ ...this.state, shelf: [] })
+  }
+
+  filterBooks = (input) => {
+    const filteredBooks = this.state.books.filter((book) => book.title.includes(input))
+    this.setState({ books: filteredBooks })
+  }
+
+  reset = () => {
+    this.setState({ books: data })
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Header />
+        <SearchBar filterBooksFn={this.filterBooks} resetFn={this.reset} />
+
+        <BookList books={this.state.books} addToShelfFn={this.addToShelf} />
+        <Shelf shelf={this.state.shelf} clearShelfFn={this.clearShelf} />
+      </div>
+    );
+  }
 }
-
 export default App;
